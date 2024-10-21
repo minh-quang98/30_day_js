@@ -3,10 +3,10 @@
  * @return {Function}
  */
 var once = function(fn) {
-  let call = true;
+  let isCall = true;
   return function(...args){
-      if (call) {
-          call = false;
+      if (isCall) {
+        isCall = false;
           // ...args truyền nhiều tham số vào hàm
           return fn(...args);
       }
