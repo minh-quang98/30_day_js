@@ -13,6 +13,7 @@ TimeLimitedCache.prototype.set = function(key, value, duration) {
   if (found) {
      clearTimeout(this.listItem.get(key).time);
   }
+  // The returned timeoutID is a positive integer value which identifies the timer created by the call to setTimeout(). This value can be passed to clearTimeout() to cancel the timeout.
   this.listItem.set(key, {
       value: value,
       time: setTimeout(() => this.listItem.delete(key), duration)
